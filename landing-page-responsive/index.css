@@ -1,16 +1,14 @@
 body{
-    font-family: 'Inter', sans-serif;
-    padding: 1rem 1rem; 
+    font-family: 'Inter', sans-serif; 
     color:#404040;
     font-style: normal;
     text-decoration: none;
-    background-color: #E5E5E5;
+    background-color: #FFFFFF;
 }
 
 main{
-
+    padding: 0 0 1rem 1rem;
     margin:2.5%;
-
 }
 
 /* tipografia */
@@ -18,9 +16,11 @@ main{
     font-family: 'Lato', sans-serif;
     font-weight: 600;
     font-size: 18px;
+    padding: 1rem 3rem 0  1rem;
 }
 
 .title-site-text{
+
     font-weight: bold;
     font-size: 21px;
     line-height: 25px;
@@ -31,7 +31,8 @@ main{
 }
 
 h1{
-    font-family: Inter, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
     font-size: 64px;
 }
 
@@ -45,7 +46,7 @@ h1{
 .hero-container-counter{
     font-weight: 600;
     font-size: 14px;
-    line-height: 17px; 
+    line-height: 17px;
 }
 
 .hero-counter-obbiettivo{
@@ -67,6 +68,7 @@ h1{
     color: #FFFFFF;
     text-align: center;
     float:right;
+    clear:both;
 }
 
 .footer-text{
@@ -100,21 +102,22 @@ a:focus{
 
 
 .title-site{
+
     display: flex;
+    align-content: center;
 }
 
 .title-site-text{
-    margin: 1rem 0  0  1rem;
+    margin-top: 0.75rem;
 }
 
-.navigations ul{
+.navigations{
     display: flex;
-    list-style: none;
     justify-content: center;
 }
 
-.navigations li{
-    margin-left:1.5em;
+.navigations a{
+    margin-left:6rem;
 }
 
 .hero-subtitle{
@@ -125,33 +128,33 @@ a:focus{
     background: #FFFFFF;
     box-shadow: 5px 10px 24px rgba(26, 162, 156, 0.24);
     border-radius: 14px;
-    margin-top: 2.5rem;
     padding: 1.25rem;
+    margin-top: 2.25rem;
+    clear:both;    
+    float:right;
+    width:92.5%;
+}
+
+.hero-counter-progress-container{
+    width: 100%;
+    margin: 1rem 0;
+    background-color:#D3D3D5;
+    height:10px;
+    border-radius: 14px;
 }
 
 .hero-counter-progress{
-    position: relative;
-    margin: 1rem 0;
-}
-
-.img-counter-sotto{
-    display:block;
-    height: 8px;
-    width: 100%;
-
-}
-
-.img-counter-sopra{
-    position: absolute;
-    width: 60%;
-    height: 8px;
+    width:60%;
+    height: 10px;
+    background-color: #1AA29C;
+    border-radius: 14px;
 }
 
 .container-button{
-    margin-top: 1rem;
+    margin-top: 1.25rem;
     justify-content: center;
     right:1.5rem;
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 1rem;
 }
 
 .hero-button-img{
@@ -160,12 +163,17 @@ a:focus{
 
 .container-right{
     margin-left: 3%;
+    
+}
+
+.container-text{
+    width:50%;
 }
 
 .container-footer{
     position: absolute;
     bottom : 1rem;
-    right: 1rem;
+    right: 3rem;
 }
 
 .footer-text{
@@ -182,6 +190,11 @@ a:focus{
 
     .container-right{
         display:none;
+    }
+
+    .container-text{
+        width:100%;
+        margin:auto;
     }
 
     .container-footer{
