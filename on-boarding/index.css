@@ -1,0 +1,103 @@
+body{
+    background-color: #006460;
+    color:#FFFFFF;
+    font-style: normal;
+    font-family:Roboto,sans-serif;
+    text-align: center;
+    align-items: center;
+}
+
+main{
+    width:100%;
+}
+
+/*Tipografia*/
+
+.container-main-title{
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+}
+
+.main-text{
+
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.button{
+   background-color: #FFFFFF;
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 16px;
+   text-align: center;
+   color: #00A09A;
+   border-radius: 8px;
+   border:none;
+   padding: 0.5rem 2rem;
+}
+
+/*Layout*/
+
+main{
+    display: flex;
+
+    flex-direction: column;   
+}
+
+.container-flex{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+} 
+
+
+
+.container-images{
+    margin-top: 5rem;
+}
+
+.image{
+    width:100%;
+}
+
+.container-images .slide2{
+    margin-top: -2.25rem;
+}
+
+.container-text{
+    width:300%;
+    flex-direction: column;
+}
+
+.container-main-title{
+    margin-top: 3rem;
+}
+
+
+
+.text{
+    width:100%;
+}
+
+
+
+.main-text{
+    width: 100%;
+}
+
+.container-images{
+    width:300%;
+}
+
+.container-button{
+    position:absolute;
+    bottom:3rem;
+}
+
+.button:hover{
+    text-decoration: underline;
+    box-shadow: 5px 5px black;
+}
