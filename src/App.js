@@ -1,5 +1,10 @@
 import logo from './logo.svg';
+import logo_alto from './immagini.svg';
 import './App.css';
+
+function Menu(){
+  return (<img src ={logo_alto} class-Name = "App-logo" alt = "logo"/n>)
+}
 
 function App() {
   return (

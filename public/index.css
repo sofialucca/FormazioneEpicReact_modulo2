@@ -1,0 +1,109 @@
+body{
+    font-family: 'Inter', sans-serif;
+    padding: 1rem 1rem; 
+    color:#404040;
+    font-style: normal;
+    text-decoration: none;
+    background-color: #E5E5E5;
+}
+
+/* tipografia */
+.container-nav{
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.title-site-text{
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+}
+
+.parola-diversa{
+    color: #1AA29C; 
+}
+
+h1{
+    font-family: Inter, sans-serif;
+    font-size: 64px;
+}
+
+.hero-subtitle{
+    font-family: 'Source Sans Pro';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.footer-text{
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #D3D3D5;
+}
+
+a{
+    text-decoration: none;
+    color: #404040;
+}
+
+a:hover,
+a:focus{
+    text-decoration: underline;
+    color:#1AA29C;
+}
+
+
+/* Layout */
+
+.container-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.title-site{
+    display: flex;
+}
+
+.title-site-text{
+    margin: 1rem 0  0  1rem;
+}
+
+.navigations ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.navigations li{
+    margin-left:1.5em;
+}
+
+.container-footer{
+    position: absolute;
+    bottom : 1rem;
+    right: 1rem;
+}
+
+.footer-text{
+    margin: 1.25rem 0.75rem 0 0;
+}
+
+
+@media(max-width: 675px){
+    .navigations{
+        display:none;
+    }
+
+    .container-right{
+        display:none;
+    }
+
+    .container-footer{
+        right: 35%;
+    }
+}
