@@ -9,98 +9,110 @@
         <script type ="text/javascript" >
             var nClick=0;
             function traslare(idSpostamento1, idSpostamento2){
-                if(nClick<3){
+                if(nClick<=2){
                     let elSpostare1 = document.querySelectorAll(idSpostamento1);
                     nClick+=1;
                     let transform = `translateX(-${nClick*100}%)`
                     elSpostare1.forEach(element => {
                         element.style.transform = transform;
-                        element.style.trasition =  "transform, 400ms, linear";
+
                     });
+
                     let elSpostare2 = document.querySelectorAll(idSpostamento2);
                     elSpostare2.forEach(element => {
                         element.style.transform =transform;
-                        element.style.trasition =  "transform, 500ms, linear";
                     });
+                    
 
-                    if(nClick==2){
-                       cambioBottone("FINE") 
+                    if(nClick>2){
+                        elSpostare1[nClick].style.marginTop = "5%";
+                        let elSpostare3 = document.querySelector(".container-stepper")
+                        elSpostare3.style.transform =transform;
+                        let bottone = document.querySelector(".container-button");
+                        bottone.style.transform = transform;
+
+                    }else{
+                        let elSpostare3 = document.querySelectorAll("span");
+                        elSpostare3.forEach(element =>{
+                            element.style.color= '#FFFFFF';
+                        })
+
+                        elSpostare3[nClick].style.color= '#00A09A';
+
+                        if(nClick==2){
+                        cambioBottone("FINE")
+                        }
                     }
+
                 }
-            
+
             function cambioBottone(testo){
                 let bottone = document.querySelector(".button");
-                console.log(bottone);
                 bottone.value = testo;
             }
+
+            // function mostraLogo(){
+            //     let logo = document.querySelector(".container-logo");
+            //     console.log(logo);
+            //     document.querySelector("main").style.display = "none";
+            //     // logo.style.transition = "";
+            // }
 
             }
         </script>
         <title>On-Boarding</title>
     </head>
     <body>
+
         <main>
             <div class="container-images container-flex">
-                <div class="image " id="image-slide1">
-                    <img src="immagini/on_board1.svg">
+                <div class="image ">
+                    <img src="immagini/on_board1.svg " alt="immagine 1">
                 </div>
                 <div class="image slide2">
-                    <img src="immagini/on_board2.svg">
+                    <img src="immagini/on_board2.svg "alt="immagine 2">
                 </div>
-                <div class="image slide3">
-                    <img src="immagini/on_board3.svg">
+                <div class="image">
+                    <img src="immagini/on_board3.svg" alt="immagine 3">
+                </div>
+                <div class="image container-logo">
+                    <img src="immagini/jetop_logo 1.svg" alt="logo JEToP" class="slide4">
                 </div>
             </div>
-            <div class="container-text container-flex">
                 <div class="container-stepper container-flex">
-                    <div>
-                        <span class="attuale">.</span>..
-                    </div>
-                    <div>
-                        .<span class="attuale">.</span>.
-                    </div>
-                    <div>
-                        ..<span class="attuale">.</span>
-                    </div>
+                    <span class="slide1 attuale">.</span>
+                    <span class="slide2">.</span>
+                    <span class="slide3">.</span>
+
                 </div>
-                <div class="container-flex">
+
+            <div class="container-text container-flex">
                     <div class="slide1 container-text-main">
-                        <div class="title slide1 ">
+                        <div class="title">
                             ONBOARDING
                         </div>
-                        <div class="text slide1">
+                        <div class="text">
                             Con questo progetto imparerai alcune delle funzionalità avanzate del css e inizierai ad utilizzare javascript per far prendere vita alla web app.
                         </div>
                     </div>
                     <div class="slide2 container-text-main">
-                        <div class="title slide2">
+                        <div class="title">
                             TRANSITION, FLEX E MOLTO ALTRO
                         </div>
-                        <div class="text slide2">
+                        <div class="text">
                             Dovrai utilizzare <strong>flexbox</strong> per organizzare i componenti nelle varie schermate.<br>
                             Inizierai ad aggiungere animazioni semplici grazie all’attributo <strong>transition</strong>
                         </div>
                     </div>
                     <div class="slide3 container-text-main">
-                        <div class="title slide3">
+                        <div class="title">
                             SEI HAI DEI DUBBI, CHIEDI!
                         </div>
-                        <div class="text slide3">
+                        <div class="text">
                             CSS non è semplice da imparare.<br>
                             Non esitare dunque a contattare un’altro IT per chiedere consigli.
                         </div>
                     </div>
-                </div>
-
-                <div class="container-main-title container-flex">
-
-                </div>
-
-                <div class="main-text container-flex">
-
-
-
-                </div>
             </div>
             <div class="container-button">
                 <form>
