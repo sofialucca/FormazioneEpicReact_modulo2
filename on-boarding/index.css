@@ -13,14 +13,23 @@ main{
 
 /*Tipografia*/
 
-.container-main-title{
+
+
+.title{
     font-weight: bold;
     font-size: 21px;
     line-height: 25px;
 }
 
-.main-text{
+.container-stepper{
+    font-size: 80px;
+}
 
+.attuale{
+    color:#00A09A;
+}
+
+.text{
     font-weight: normal;
     font-size: 18px;
     line-height: 24px;
@@ -37,15 +46,12 @@ main{
    border-radius: 8px;
    border:none;
    padding: 0.5rem 2rem;
+   transition: background-color 500ms ease, color 1.5s ease;
 }
 
 /*Layout*/
 
-main{
-    display: flex;
 
-    flex-direction: column;   
-}
 
 .container-flex{
     display: flex;
@@ -53,51 +59,51 @@ main{
     flex-direction: row;
 } 
 
-
+.container-images,
+.container-text{
+    width:300%;
+}
 
 .container-images{
     margin-top: 5rem;
 }
 
+.container-text-main,
 .image{
     width:100%;
 }
 
 .container-images .slide2{
     margin-top: -2.25rem;
+ 
 }
 
+.main,
 .container-text{
-    width:300%;
     flex-direction: column;
 }
 
-.container-main-title{
-    margin-top: 3rem;
+.container-text-main{
+    margin-top: 2rem;
 }
 
-
+/* .container-main-title .slide1{
+    margin-left: 6rem;
+} */
 
 .text{
-    width:100%;
-}
-
-
-
-.main-text{
-    width: 100%;
-}
-
-.container-images{
-    width:300%;
+    margin-top: 1rem;
 }
 
 .container-button{
+    width:100%;
     position:absolute;
-    bottom:3rem;
+    bottom:1.5rem;
+    left:0;
 }
 
 .button:hover{
-    text-decoration: underline;
-    box-shadow: 5px 5px black;
+    background-color: #ee0066;
+    color:white;
+
 }

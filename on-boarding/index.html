@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Sofia Lucca">
         <meta name ="description" content="on-boarding">
         <link href="http://fonts.googleapis.com/css?family=Montserrat|Roboto|Source Sans Pro:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" type ="text/css" href="index.css">
+        <script type ="text/javascript" >
+            var nClick=0;
+            function traslare(idSpostamento1, idSpostamento2){
+                if(nClick<3){
+                    let elSpostare1 = document.querySelectorAll(idSpostamento1);
+                    nClick+=1;
+                    let transform = `translateX(-${nClick*100}%)`
+                    elSpostare1.forEach(element => {
+                        element.style.transform = transform;
+                        element.style.trasition =  "transform, 400ms, linear";
+                    });
+                    let elSpostare2 = document.querySelectorAll(idSpostamento2);
+                    elSpostare2.forEach(element => {
+                        element.style.transform =transform;
+                        element.style.trasition =  "transform, 500ms, linear";
+                    });
+
+                    if(nClick==2){
+                       cambioBottone("FINE") 
+                    }
+                }
+            
+            function cambioBottone(testo){
+                let bottone = document.querySelector(".button");
+                console.log(bottone);
+                bottone.value = testo;
+            }
+
+            }
+        </script>
         <title>On-Boarding</title>
     </head>
     <body>
         <main>
             <div class="container-images container-flex">
-                <div class="image slide1">
+                <div class="image " id="image-slide1">
                     <img src="immagini/on_board1.svg">
                 </div>
                 <div class="image slide2">
@@ -22,39 +52,62 @@
                 </div>
             </div>
             <div class="container-text container-flex">
-                <div class="container-main-title container-flex">
-                    <div class="tile slide1">
-                        ONBOARDING
+                <div class="container-stepper container-flex">
+                    <div>
+                        <span class="attuale">.</span>..
                     </div>
-                    <div class="title slide2">
-                        TRANSITION, FLEX E MOLTO ALTRO
+                    <div>
+                        .<span class="attuale">.</span>.
                     </div>
-                    <div class="title slide3">
-                        SEI HAI DEI DUBBI, CHIEDI!
+                    <div>
+                        ..<span class="attuale">.</span>
                     </div>
                 </div>
+                <div class="container-flex">
+                    <div class="slide1 container-text-main">
+                        <div class="title slide1 ">
+                            ONBOARDING
+                        </div>
+                        <div class="text slide1">
+                            Con questo progetto imparerai alcune delle funzionalità avanzate del css e inizierai ad utilizzare javascript per far prendere vita alla web app.
+                        </div>
+                    </div>
+                    <div class="slide2 container-text-main">
+                        <div class="title slide2">
+                            TRANSITION, FLEX E MOLTO ALTRO
+                        </div>
+                        <div class="text slide2">
+                            Dovrai utilizzare <strong>flexbox</strong> per organizzare i componenti nelle varie schermate.<br>
+                            Inizierai ad aggiungere animazioni semplici grazie all’attributo <strong>transition</strong>
+                        </div>
+                    </div>
+                    <div class="slide3 container-text-main">
+                        <div class="title slide3">
+                            SEI HAI DEI DUBBI, CHIEDI!
+                        </div>
+                        <div class="text slide3">
+                            CSS non è semplice da imparare.<br>
+                            Non esitare dunque a contattare un’altro IT per chiedere consigli.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-main-title container-flex">
+
+                </div>
+
                 <div class="main-text container-flex">
-                    <div class="text slide1">
-                        Con questo progetto imparerai alcune delle funzionalità avanzate del css e inizierai ad utilizzare javascript per far prendere vita alla web app. 
-                    </div>
-                    <div class="text slide2">
-                        Dovrai utilizzare <strong>flexbox</strong> per organizzare i componenti nelle varie schermate.<br>
-                        Inizierai ad aggiungere animazioni semplici grazie all’attributo <strong>transition</strong>
-                    </div>
-                    <div class="text slide3">
-                        CSS non è semplice da imparare.<br>
-                        Non esitare dunque a contattare un’altro IT per chiedere consigli.
-                    </div>
+
+
+
                 </div>
             </div>
             <div class="container-button">
-                <form class=" container-flex">
-                    <button type="button" class="slide1 button">AVANTI</button>
-                    <button type="button" class="slide2 button">AVANTI</button>
-                    <button type="button" class="slide3 button">FINE</button>
-                </form>                
+                <form>
+                    <input type="button" value="AVANTI" class="button" onclick="traslare('.image', '.container-text-main')"></input>
+                </form>
             </div>
         </main>
 
-    </body>   
+    </body>
 </html>
