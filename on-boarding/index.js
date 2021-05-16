@@ -1,4 +1,4 @@
-use strict;
+'use strict';
 
 var nClick=0;
 function traslare(idSpostamento1, idSpostamento2, idStepper, idContButton, idButton){
@@ -18,12 +18,11 @@ function traslare(idSpostamento1, idSpostamento2, idStepper, idContButton, idBut
         
 
         if(nClick>2){
-            elSpostare1[nClick].style.marginTop = "5%";
             let elSpostare3 = document.querySelector(idStepper)
             elSpostare3.style.transform =transform;
             let bottone = document.querySelector(idContButton);
             bottone.style.transform = transform;
-
+            elSpostare1[nClick].style.paddingTop="5%";
         }else{
             let elSpostare3 = document.querySelectorAll("span");
             elSpostare3.forEach(element =>{
