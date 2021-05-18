@@ -22,7 +22,7 @@ function traslare(idSpostamento1, idSpostamento2, idStepper, idContButton, idBut
             elSpostare3.style.transform =transform;
             let bottone = document.querySelector(idContButton);
             bottone.style.transform = transform;
-            elSpostare1[nClick].style.paddingTop="5%";
+            // elSpostare1[nClick].style.paddingTop="2.5%";
         }else{
             let elSpostare3 = document.querySelectorAll("span");
             elSpostare3.forEach(element =>{
