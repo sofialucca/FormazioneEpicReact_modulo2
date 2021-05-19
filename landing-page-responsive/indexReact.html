@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Landing Page"
+    />
+    <link href="http://fonts.googleapis.com/css?family=Inter|Lato|Source Sans Pro:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type ="text/css" href="index.css">
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <div id = "root"></div>
+    <script type = "text/babel">
+        function Menu(){
+            return(<div className="container-flex container-nav">
+            <div className = "title-site">
+                <img src="immagini/logo-alto.svg" className ="title-site-logo"/>
+                <div className = "title-site-text">
+                <span className="parola-diversa">#</span>IORESTOA<span className="parola-diversa">CASA</span>
+                </div>          
+            </div>
+            <nav className="navigations">
+                <a href="">Chi siamo</a>
+                <a href="">Contattaci</a>
+            </nav>
+            </div>)
+        }
+        function Hero(){
+            return(
+                <main className="container-flex ">
+                <div className = "container-text">
+                <div className ="hero">
+                    <h1>Restiamo a <span className="parola-diversa">casa</span>.</h1>
+                    <div className= "hero-subtitle">
+                    È arrivato il momento di adottare un comportamento responsabile e farsi carico dei propri doveri come cittadino e come individuo.
+                    </div>
+                    <div className="hero-container-counter">
+                        <div className="hero-counter-current">persone si sono fatte avanti</div>
+                        <div className="hero-counter-progress-container">
+                        <div className="hero-counter-progress" ></div>
+                        </div>
+
+                        <div className="hero-counter-obbiettivo">arriviamo a 5 mila</div>
+                    </div>
+                    <div className="container-flex container-button">
+                    <div >
+                        Unisciti
+                    </div>
+                        <img src="immagini/arrow-right-circle 1.svg" className="hero-button-img"/>
+                    </div>
+                </div>
+                </div>
+                <div className="container-right">
+                <img src ="immagini/hero_image.svg" alt="image woman on the couch" className="conatiner-right-image"/>
+                </div>
+                </main>
+            )
+        }
+
+        function Footer(){
+            return(
+                <footer>
+                <div className ="container-flex container-footer">
+                <div className="footer-text">
+                    powered by
+                    </div>
+                <img src="immagini/jetop_logo.svg" alt="Logo JEToP"/>
+                </div>
+            </footer>
+            )
+        }
+        const element = (
+            <React.Fragment>
+                <Menu />
+                <Hero/>
+                <Footer />
+            </React.Fragment>
+            )
+        ReactDOM.render(element, document.getElementById('root'));
+    </script>
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div> -->
+  </body>
+</html>
