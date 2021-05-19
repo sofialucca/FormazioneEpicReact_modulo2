@@ -15,9 +15,9 @@ function ElementoLista({valoreKey,elemento,removeTodo,svoltoTodo}){
   
     return (
       <div className = {["ElementoLista", ((elemento.svolto)? "elemento-svolto":"elemento-non-svolto")].join(' ')} key = {valoreKey}>
-        <input type = "button" disabled = {elemento.svolto} value = "SVOLTO" onClick = {(e) => handleSvolto(e)}/>              
+        <input type = "button" disabled = {elemento.svolto} value = "SVOLTO" onClick = {(e) => handleSvolto(e)} className = "bottone bottone-svolto"/>              
         <div className = "contenuto">{elemento.value}</div>
-        <input type = "button" onClick={(e)=>handleRemove(e)} value = "RIMUOVI"/>
+        <input type = "button" onClick={(e)=>handleRemove(e)} value = "RIMUOVI"  className = "bottone bottone-remove"/>
       </div>
     )
   }

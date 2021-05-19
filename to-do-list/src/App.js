@@ -4,23 +4,21 @@ import * as React from 'react';
 import Form from './Form';
 import ElementoLista from './ElementoLista';
 
-const arrayLista = [];
-
 function App() {
 
-  const [lista,setLista] = React.useState([{index:0, value:"boo", svolto:false}]);
+  const [lista,setLista] = React.useState([]);
+  const[count, setCount] = React.useState(0);
 
   function addTodo(elemento){
     const nuovaTask = {
-      index:arrayLista.length+1,
+      index:count,
       value: elemento,
       svolto: false
     }
-    arrayLista.push(nuovaTask);
+    setCount(count+1);
     const nuovaLista = lista;
     nuovaLista.push(nuovaTask);
     setLista(nuovaLista);
-    console.log(lista);
   }
 
   function removeTodo(elemento){
@@ -58,9 +56,3 @@ function App() {
 }
 
 export default App;
-
-{/* <li className = "container-elemento" key={elemento.index}>
-<input type = "button" disabled = {elemento.svolto} value = "SVOLTO" onClick = {()=>svoltoTodo(elemento)}/>              
-<div className = {(elemento.tipo)? "elemento-svolto":"elemento_non_svolto"}>{elemento.value}</div>
-<input type = "button" onClick={()=>removeTodo(elemento)} value = "RIMUOVI"/>
-</li> */}

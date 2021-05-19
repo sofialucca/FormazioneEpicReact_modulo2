@@ -1,12 +1,11 @@
 .App {
   text-align: center;
   padding: 1rem 2rem;
-  /* position:absolute; */
-  max-width: 50%;
+  max-width: 500px;
   height: auto;
   margin:auto;
   margin-top: 5rem;
-  background-color: #99ffff;  
+  background-color: white;
   border-radius: 8px;
   box-shadow: 5px 10px 6px;
   display: flex;
@@ -15,8 +14,12 @@
 }
 
 .App-header {
-  color: #ff8822;
+  margin-top: -0.25rem;
   font-variant: small-caps;
+}
+
+.container-list{
+  margin-top: 1.25rem;
 }
 
 

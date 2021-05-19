@@ -1,9 +1,9 @@
 .ElementoLista{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
-    margin-top : 1.25rem;
-    padding: 0.5rem 0;
+    margin-top : 0.5rem;
+    padding: 0.5rem 0.25rem;
     border-radius: 8px;
 }
 
@@ -17,7 +17,60 @@
 
 .elemento-svolto .contenuto{
     text-decoration: line-through;
-    color: grey
+    color: grey;
 }
 
+.contenuto{
+    word-wrap: break-word;
+    margin: auto;
+    width: 70%;
+}
 
+.bottone,
+.bottone-svolto:hover:disabled{
+    border-radius: 8px;
+    border: 1px solid;
+    /* padding: 0.25rem 0.75rem; */
+    height: 1.5rem;
+    transition-property: color, background-color, border-color;
+    transition: 500ms ease; 
+}
+
+.bottone:hover{
+    border: 0px none;
+}
+
+.bottone-svolto,
+.bottone-svolto:hover:disabled{
+    background-color: rgb(151, 255, 151);
+}
+
+.bottone-remove{
+    background-color: rgb(105, 105, 105);
+    color:white;
+}
+
+.bottone-svolto:hover{
+    background-color: rgb(1, 255, 1);
+}
+
+.bottone-remove:hover{
+    background-color: black;
+}
+
+@media(max-width:500px){
+    .ElementoLista{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .contenuto{
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .bottone{
+        width: 5rem;
+    }
+}
