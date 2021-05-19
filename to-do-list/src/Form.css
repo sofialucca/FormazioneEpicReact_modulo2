@@ -1,0 +1,39 @@
+.Form{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 0.5rem;
+}
+
+.input-Utente{
+    background: #fdb779;
+    border-radius: 8px;
+    color:white;
+    border:0px none;
+    text-align: center;
+}
+
+.input-Utente:hover,
+.input-Utente:focus{
+    border-radius: 8px;
+    outline: none;
+    box-shadow: none;
+    background-color: white;
+    color: black;
+}
+
+.bottone-aggiunta{
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    color:white;
+    background-color: #ffdd11;
+    font-weight: bold;
+    border: 0.5px white;
+    transition-property: color, background-color;
+    transition: 500ms ease;
+}
+
+.bottone-aggiunta:hover{
+    background-color: #0099bb;
+    color:black;
+}

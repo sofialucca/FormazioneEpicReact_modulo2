@@ -1,59 +1,26 @@
 
 import './App.css';
 import * as React from 'react';
+import Form from './Form';
+import ElementoLista from './ElementoLista';
 
 const arrayLista = [];
 
-// function ContextProvider(){
-//   return (<ListaContext.Provider>
-
-//   </ListaContext.Provider>)
-// }
-
-// function useContext(){
-//   result = React.useContext(ListContext);
-//   if(result != null){
-//     return result;
-//   }else{
-//     throw new Error("ERRORE: non posso usare list Context a meno che non inserita in un componente provider")
-//   }
-// }
-
-function Form({addTodo}){
-  const[elemento,setElemento] = React.useState("");
-
-  function handleSubmit(e){
-    e.preventDefault();
-    if(!elemento)
-      return;
-    addTodo(elemento);
-    setElemento("");
-  }
-
-  return(
-    <div className = "container-form">
-      <form className = "f" onSubmit = {e=>handleSubmit(e)}>
-        <input type = "text" placeholder = "...Nuova Task..." value = {elemento} onChange={e => setElemento(e.target.value)}/>
-        <input type = "submit" value = "AGGIUNGI"></input>
-      </form>
-    </div>
-  )
-}
-
-
 function App() {
 
-  const [lista,setLista] = React.useState([]);
+  const [lista,setLista] = React.useState([{index:0, value:"boo", svolto:false}]);
 
   function addTodo(elemento){
     const nuovaTask = {
-      index:arrayLista.length,
+      index:arrayLista.length+1,
       value: elemento,
       svolto: false
     }
     arrayLista.push(nuovaTask);
-    console.log(arrayLista);
-    setLista([...lista, nuovaTask]);
+    const nuovaLista = lista;
+    nuovaLista.push(nuovaTask);
+    setLista(nuovaLista);
+    console.log(lista);
   }
 
   function removeTodo(elemento){
@@ -72,19 +39,28 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className = "App-header">
+        Todo List-Reactive
+      </h1>
         <Form addTodo={addTodo}/>
-        <ul className = "container-list">
+        <div className = "container-list">
             {lista.map((elemento) => (
-              <li className = "container-elemento" key={elemento.index}>
-              <input type = "button" disabled = {elemento.svolto} value = "SVOLTO" onClick = {()=>svoltoTodo(elemento)}/>              
-              <div className = {(elemento.tipo)? "elemento-svolto":"elemento_non_svolto"}>{elemento.value}</div>
-              <input type = "button" onClick={()=>removeTodo(elemento)} value = "RIMUOVI"/>
-              </li>
+              <ElementoLista 
+                valoreKey={elemento.index}
+                elemento = {elemento}
+                removeTodo = {removeTodo}
+                svoltoTodo = {svoltoTodo}/>
             )
             )}
-        </ul>
+        </div>
     </div>
   );
 }
 
 export default App;
+
+{/* <li className = "container-elemento" key={elemento.index}>
+<input type = "button" disabled = {elemento.svolto} value = "SVOLTO" onClick = {()=>svoltoTodo(elemento)}/>              
+<div className = {(elemento.tipo)? "elemento-svolto":"elemento_non_svolto"}>{elemento.value}</div>
+<input type = "button" onClick={()=>removeTodo(elemento)} value = "RIMUOVI"/>
+</li> */}
